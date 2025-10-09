@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jeysson Zerpa — Analista & Cientista de Dados | BI & IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1020; --bg2:#0f1530; --pri:#65f7da; --sec:#78a6ff; --acc:#ffd166; --mut:#9aa5b1; --card:#121938; --glass:rgba(18,25,56,.6);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:radial-gradient(1200px 700px at 20% -10%, #1c275a 0%, transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2));color:#e6e9ef;overflow-x:hidden}
+    a{color:var(--pri);text-decoration:none}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    header{position:fixed;top:0;left:0;right:0;z-index:20;background:linear-gradient(180deg,rgba(11,16,32,.9),rgba(11,16,32,.35));backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:36px;height:36px;border-radius:10px;background:conic-gradient(from 210deg at 50% 50%,var(--pri),var(--sec),#9b66ff,var(--pri));box-shadow:0 0 24px rgba(101,247,218,.35)}
+    .brand h1{margin:0;font-size:16px;font-weight:700;letter-spacing:.4px}
+    .nav-links{display:flex;gap:18px;flex-wrap:wrap}
+    .nav-links a{font-size:14px;color:#d9deea;opacity:.85}
+    .actions{display:flex;gap:10px}
+    .btn{border:1px solid rgba(255,255,255,.15);padding:8px 14px;border-radius:12px;font-weight:600;font-size:13px;color:#e8ecf5;background:rgba(255,255,255,.04);transition:.25s}
+    .btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.3)}
+    .btn.primary{background:linear-gradient(180deg,var(--pri),#39d7b4);color:#031016;border-color:transparent;box-shadow:0 10px 30px rgba(101,247,218,.25)}
+    .lang{display:flex;gap:6px}
+    .lang button{all:unset;cursor:pointer;padding:6px 10px;border-radius:10px;border:1px solid rgba(255,255,255,.12);font-size:12px;color:#c9d1e5}
+    .lang button.active{background:linear-gradient(180deg,#1b2448,#0f1736);color:#fff}
+
+    /* Hero */
+    .hero{position:relative;min-height:88vh;display:grid;place-items:center;padding-top:84px}
+    canvas#scene{position:absolute;inset:0;z-index:0}
+    .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+    .chip{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.05);font-size:12px;color:#cfe6ff}
+    .title{font-size:48px;line-height:1.05;margin:14px 0}
+    .title span{background:linear-gradient(90deg,var(--pri),var(--sec));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .tagline{font-size:18px;color:#c7cfdb;max-width:640px}
+    .cta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+    .card3d{border:1px solid rgba(255,255,255,.08);background:var(--glass);backdrop-filter:blur(10px);border-radius:16px;padding:16px;display:grid;gap:10px;transform:translateZ(0)}
+
+    section{position:relative;padding:64px 0;border-top:1px solid rgba(255,255,255,.06)}
+    h2{margin:0 0 18px;font-size:28px}
+    .grid{display:grid;gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:980px){.hero-inner{grid-template-columns:1fr}.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
+
+    .kard{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px}
+    .kard h3{margin:0 0 8px;font-size:16px}
+    .muted{color:#9fb0c6;font-size:14px}
+
+    .timeline{display:grid;gap:8px}
+    .tl{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+    .tl .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(180deg,var(--sec),#5f86ff);box-shadow:0 0 0 3px rgba(120,166,255,.2)}
+
+    footer{padding:36px 0;text-align:center;color:#aab6c8}
+    .badge{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(255,255,255,.1);padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.03)}
+    .btn.link{background:transparent;border-color:rgba(255,255,255,.2)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="logo"></div>
+          <h1>Jeysson L. Z. Armas • Data & BI</h1>
+        </div>
+        <div class="nav-links">
+          <a href="#servicos">Serviços</a>
+          <a href="#formacao">Formação</a>
+          <a href="#experiencia">Experiência</a>
+          <a href="#portfolio">Portfólio</a>
+          <a href="#badges">Insígnias</a>
+          <a href="#contato">Contato</a>
+        </div>
+        <div class="actions">
+          <div class="lang">
+            <button data-lang="pt" class="active">PT</button>
+            <button data-lang="es">ES</button>
+            <button data-lang="en">EN</button>
+          </div>
+          <a class="btn primary" href="#contato">Fazer Contato</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <canvas id="scene"></canvas>
+    <div class="container hero-inner">
+      <div>
+        <div class="chip" id="chip">Analista & Cientista de Dados • BI • IA</div>
+        <h1 class="title" id="title">Jeysson Zerpa — <span>Business Intelligence</span> & IA</h1>
+        <p class="tagline" id="tagline">Transformo dados e automações em decisões inteligentes com propósito humano e impacto real.</p>
+        <div class="cta">
+          <a href="#portfolio" class="btn primary" id="ctaPrimary">Ver projetos</a>
+          <a href="#formacao" class="btn link" id="ctaSecondary">Formação & certificações</a>
+        </div>
+      </div>
+      <div class="card3d">
+        <div class="badge">📍 Brasil • 🌎 Atuação internacional • 🇻🇪 Base contábil</div>
+        <div class="muted" id="heroBullets">
+          • BI (Power BI)
+          • Python & SQL
+          • Automação (n8n)
+          • Integrações entre sistemas
+          • Projetos humanitários (ONU/OIM)
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <div class="container">
+      <h2 id="s_h2">Áreas de atuação / Serviços</h2>
+      <div class="grid cols-3" id="services"></div>
+    </div>
+  </section>
+
+  <section id="formacao">
+    <div class="container">
+      <h2 id="f_h2">Formação & Certificações</h2>
+      <div class="grid cols-2">
+        <div class="kard">
+          <h3 id="acad_h3">Formação Acadêmica (ordem estratégica BR)</h3>
+          <div class="timeline" id="academica"></div>
+        </div>
+        <div class="kard">
+          <h3 id="hum_h3">Certificações Humanitárias (timeline)</h3>
+          <div class="timeline" id="humanitarias"></div>
+        </div>
+      </div>
+      <div class="kard" style="margin-top:16px">
+        <h3 id="tec_h3">Certificações Técnicas e Profissionais</h3>
+        <div class="grid cols-2">
+          <div>
+            <h4 style="margin:8px 0" id="tec_br_h4">Brasil</h4>
+            <div class="timeline" id="tecnicasBR"></div>
+          </div>
+          <div>
+            <h4 style="margin:8px 0" id="tec_ve_h4">Venezuela</h4>
+            <div class="timeline" id="tecnicasVE"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <div class="container">
+      <h2 id="exp_h2">Experiência Profissional</h2>
+      <div class="grid cols-2" id="experiencias"></div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="container">
+      <h2 id="port_h2">Portfólio / Projetos</h2>
+      <div class="grid cols-3" id="projetos"></div>
+    </div>
+  </section>
+
+  <section id="badges">
+    <div class="container">
+      <h2>Insígnias Microsoft Learn — Power BI & Copilot (mar/2025)</h2>
+      <div class="grid cols-3" id="badgesGrid"></div>
+      <div style="margin-top:14px">
+        <a class="btn primary" target="_blank" id="badgeBtn" href="#">Ver minhas credenciais no Microsoft Learn ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="container">
+      <h2 id="c_h2">Contato</h2>
+      <div class="grid cols-2">
+        <div class="kard">
+          <h3 id="c_h3">Vamos conversar</h3>
+          <p class="muted" id="c_p">Envie uma mensagem e receba uma demonstração personalizada de BI/IA para o seu contexto.</p>
+          <div class="cta">
+            <a class="btn primary" href="https://wa.me/" target="_blank" id="cta_whats">Falar no WhatsApp</a>
+            <a class="btn" href="mailto:" id="cta_email">Enviar e-mail</a>
+          </div>
+        </div>
+        <div class="kard">
+          <h3>Links rápidos</h3>
+          <ul class="muted" style="line-height:1.9">
+            <li><a href="#portfolio">Projetos</a></li>
+            <li><a href="#formacao">Formação & Certificações</a></li>
+            <li><a href="#badges">Insígnias Microsoft Learn</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Jeysson Zerpa — Data • BI • IA</div>
+  </footer>
+
+  <!-- three.js for interactive 3D background -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script>
+  // ---------- 3D Scene (subtle, professional) ----------
+  const canvas = document.getElementById('scene');
+  const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(55, innerWidth/innerHeight, 0.1, 100);
+  camera.position.set(0,0,6);
+  const resize = ()=>{
+    renderer.setSize(innerWidth, innerHeight);
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();
+  }; resize(); addEventListener('resize', resize);
+
+  // Particles
+  const geo = new THREE.BufferGeometry();
+  const count = 900;
+  const positions = new Float32Array(count*3);
+  for (let i=0;i<count;i++){const r= Math.random()*3.8+1.6; const a=Math.random()*Math.PI*2; const b=Math.acos(Math.random()*2-1); positions[i*3]=r*Math.sin(b)*Math.cos(a); positions[i*3+1]=r*Math.sin(b)*Math.sin(a); positions[i*3+2]=r*Math.cos(b);} 
+  geo.setAttribute('position', new THREE.BufferAttribute(positions,3));
+  const mat = new THREE.PointsMaterial({size:0.02, color:0x65f7da, transparent:true, opacity:.85});
+  const points = new THREE.Points(geo, mat); scene.add(points);
+
+  // Wireframe sphere
+  const sphere = new THREE.Mesh(
+    new THREE.SphereGeometry(2.5, 32, 32),
+    new THREE.MeshBasicMaterial({wireframe:true, color:0x78a6ff, transparent:true, opacity:.25})
+  );
+  scene.add(sphere);
+
+  let mx=0,my=0; addEventListener('mousemove',e=>{mx=(e.clientX/innerWidth-.5)*0.6; my=(e.clientY/innerHeight-.5)*0.6});
+  (function animate(){requestAnimationFrame(animate); sphere.rotation.y+=0.002; points.rotation.y+=0.0015; sphere.rotation.x = my; points.rotation.x= my*1.2; camera.position.x += (mx*2 - camera.position.x)*0.03; camera.position.y += (-my*2 - camera.position.y)*0.03; camera.lookAt(0,0,0); renderer.render(scene,camera);})();
+  </script>
+
+  <script>
+  // ---------- Multilingual content (PT default) ----------
+  const Data = {
+    pt:{
+      chip:'Analista & Cientista de Dados • BI • IA',
+      title:['Jeysson Zerpa — ', 'Business Intelligence'],
+      tagline:'Transformo dados e automações em decisões inteligentes com propósito humano e impacto real.',
+      ctaP:'Ver projetos', ctaS:'Formação & certificações',
+      servicos:[
+        {t:'Business Intelligence (BI)',d:'Dashboards executivos e KPIs para decisões rápidas.'},
+        {t:'Automação de Processos',d:'Python, n8n e APIs para reduzir custos e erros.'},
+        {t:'IA Aplicada',d:'IA generativa e preditiva para insights e chatbots.'},
+        {t:'Consultoria de Dados',d:'Métricas, governança e soluções sob medida.'},
+        {t:'Integrações entre Sistemas',d:'Sheets, Notion, CRMs e bancos de dados.'},
+        {t:'Projetos Humanitários',d:'Soluções analíticas com impacto social (ONU/OIM).'}
+      ],
+      academica:[
+        {d:'31/08/2025',t:'Extensão Universitária em Business Intelligence (BI) — Unopar Anhanguera, Londrina'},
+        {d:'01/07/2025 • Em andamento',t:'Graduação Tecnológica em Ciência de Dados — Unopar Anhanguera, Prudentópolis'},
+        {d:'07/03/2025 • Em andamento',t:'Formação em Análise de Dados — Alex Lage School / Unopar, Londrina'},
+        {d:'20/12/2024',t:'Ensino Médio (ENCCEJA) — Escola Estadual Monteiro Lobato, Roraima'},
+        {d:'29/10/2004',t:'Contabilidade — Centro Contable Venezolano, Caracas'}
+      ],
+      humanitarias:[
+        {d:'2024',t:'Coordenação e Gestão de Abrigos — OIM/IOM, Boa Vista'},
+        {d:'05/03/2024',t:'PRASI (Atualização) — UNDSS/ONU'},
+        {d:'19/02/2024',t:'Conflict Resolution Master Class — UNSSC'},
+        {d:'04/07/2024',t:'PSEA — OIM/IOM'},
+        {d:'04/04/2024',t:'I Know Gender 16 — UN Women'},
+        {d:'05/04/2024',t:'VIH no local de trabalho — UN Cares'},
+        {d:'08/07/2024',t:'IOM Global Induction Programme — OIM/IOM'},
+        {d:'25/03/2023',t:'Proteção de Dados / Ética & Conduta / InfoSec — OIM/IOM'},
+        {d:'2022',t:'PSEA • BSAFE • PRASI (UNDSS/ONU)'}
+      ],
+      tecnicasBR:[
+        {d:'17/09/2025',t:'Processamento de Linguagem Natural — Escola do Trabalhador 4.0 (Microsoft+MTE)'},
+        {d:'09/07/2025',t:'Visão Geral da IA no Azure — Escola do Trabalhador 4.0'},
+        {d:'03/07/2025',t:'Conceitos básicos do Serviço OpenAI do Azure — Escola do Trabalhador 4.0'},
+        {d:'20–30/06/2025',t:'Trilha FluêncIA: IA Generativa, Ética, Bing, Evolução das Buscas, IA — Escola do Trabalhador 4.0'},
+        {d:'29/06/2025',t:'FluêncIA para Pequenas e Médias Empresas — Escola do Trabalhador 4.0'},
+        {d:'25/06/2025',t:'Copilot — Escola do Trabalhador 4.0'},
+        {d:'21/02/2025',t:'MidJourney — Coursiv'},
+        {d:'21/02/2025',t:'Jasper AI — Coursiv'},
+        {d:'01/12/2024',t:'ChatGPT (uso profissional) — Coursiv'},
+        {d:'02/09/2024',t:'Power BI Expert na Prática — Viscari Inc.'},
+        {d:'19/02/2024',t:'Microsoft Excel 2016 – Básico — Fundação Bradesco'},
+        {d:'2024',t:'Simplifica Excel Express (T16) — Simplifica Treinamentos'},
+        {d:'10/08/2023',t:'Semana do Python na Prática — EmpowerData'},
+        {d:'05/2023',t:'Simplifica Power Excel — Simplifica Treinamentos'},
+        {d:'03/2023',t:'Simplifica Power BI Express — Simplifica Treinamentos'},
+        {d:'01/2023',t:'Simplifica Excel Express — Simplifica Treinamentos'}
+      ],
+      tecnicasVE:[
+        {d:'2010',t:'Norma NVT ISO 9001:2008 — Gobernación de Bolívar / EPSI La Carioca'},
+        {d:'2010',t:'ISO 9001: Análise de Causa Raiz — Gobernación de Bolívar / EPSI La Carioca'},
+        {d:'2010',t:'ISO 9001: Enfoque baseado em processos — Gobernación de Bolívar / EPSI La Carioca'},
+        {d:'2010',t:'Marco Lógico para Elaboração de Projetos — INFOING'},
+        {d:'2008',t:'Comunicação Eficaz — Eurodistribution C.A.'},
+        {d:'2005',t:'Contabilidade Geral e Superior — Centro Contable Venezolano'},
+        {d:'2004',t:'Legislação Trabalhista — Centro Contable Venezolano'},
+        {d:'2002',t:'Imposto sobre a Renda (ISLR) — Centro Contable Venezolano'}
+      ],
+      experiencias:[
+        {t:'Analista e Cientista de Dados — Brasil',d:'mar/2022 – Presente • BI, automação e IA (Power BI, Python, SQL, n8n), integrações, dashboards, modelos preditivos e chatbots.'},
+        {t:'Consultor Independente — Venezuela (remoto)',d:'2010 – fev/2022 • 2018–2022: análise de dados e automação; 2010–2018: contabilidade, projetos financeiros e demonstrações.'},
+        {t:'Projetos Humanitários — Brasil',d:'2022 – 2024 • Coordenação/gestão de abrigos, PSEA, proteção de dados; KPIs e processos (ONU/OIM).'},
+        {t:'SSB Consultores C.A. — Analista II',d:'2007 • Rotinas contábil-fiscais, relatórios e auditoria.'},
+        {t:'Aerocamiones de Venezuela C.A. — Analista Tributário',d:'2006–2007 • Escrituração, apuração de tributos e consolidação de dados.'},
+        {t:'CEMR / Cenir Bolívar — Instrutor',d:'2008 • Princípios contábeis e controles.'}
+      ],
+      projetos:[
+        {t:'Dashboard Financeiro Executivo',d:'KPIs e DRE em tempo real.',s:'Power BI, SQL'},
+        {t:'Automação de Relatórios Contábeis',d:'Fechamento ágil e sem retrabalho.',s:'Python, n8n'},
+        {t:'Integração Sheets ↔ CRM ↔ BD',d:'Dados sincronizados.',s:'n8n, APIs, SQL'},
+        {t:'Chatbot de Conhecimento Interno (RAG)',d:'Respostas 24/7.',s:'OpenAI/Azure, Python'},
+        {t:'Previsão de Receitas e Caixa',d:'Planejamento tático.',s:'Python, Power BI'},
+        {t:'Painel Operacional para Abrigos',d:'Ocupação e estoque.',s:'Power BI, Sheets, SQL'}
+      ],
+      badges:[
+        'Criar relatórios interativos com Copilot para Power BI — 17/03/2025',
+        'Projetar um modelo semântico no Power BI — 17/03/2025',
+        'Limpar, transformar e carregar dados no Power BI — 16/03/2025',
+        'Introdução à criação com o Power BI — 16/03/2025',
+        'Obter dados no Power BI — 14/03/2025',
+        'Descrição da análise de dados — 13/03/2025'
+      ],
+      labels:{
+        serv:'Áreas de atuação / Serviços', form:'Formação & Certificações', acad:'Formação Acadêmica (ordem estratégica BR)', hum:'Certificações Humanitárias (timeline)', tec:'Certificações Técnicas e Profissionais', br:'Brasil', ve:'Venezuela', exp:'Experiência Profissional', port:'Portfólio / Projetos', cont:'Contato', vproj:'Ver projetos', vform:'Formação & certificações', wpp:'Falar no WhatsApp', mail:'Enviar e-mail', badgesBtn:'Ver minhas credenciais no Microsoft Learn ↗'
+      }
+    },
+    es:{
+      chip:'Analista y Científico de Datos • BI • IA',
+      title:['Jeysson Zerpa — ', 'Inteligencia de Negocios'],
+      tagline:'Transformo datos y automatizaciones en decisiones inteligentes con propósito humano e impacto real.',
+      ctaP:'Ver proyectos', ctaS:'Formación y certificaciones',
+      servicos:[
+        {t:'Business Intelligence (BI)',d:'Dashboards ejecutivos y KPIs.'},
+        {t:'Automatización de Procesos',d:'Python, n8n y APIs.'},
+        {t:'IA Aplicada',d:'IA generativa y predictiva para insights.'},
+        {t:'Consultoría de Datos',d:'Métricas, gobierno y soluciones a medida.'},
+        {t:'Integraciones entre Sistemas',d:'Sheets, Notion, CRMs y BD.'},
+        {t:'Proyectos Humanitarios',d:'Soluciones analíticas con impacto social (ONU/OIM).'}
+      ],
+      academica:[
+        {d:'31/08/2025',t:'Extensión Universitaria en BI — Unopar Anhanguera, Londrina'},
+        {d:'01/07/2025 • En curso',t:'Grado Tecnológico en Ciencia de Datos — Unopar, Prudentópolis'},
+        {d:'07/03/2025 • En curso',t:'Formación en Análisis de Datos — Alex Lage / Unopar, Londrina'},
+        {d:'20/12/2024',t:'Educación Media (ENCCEJA) — Escola Monteiro Lobato, Roraima'},
+        {d:'29/10/2004',t:'Contabilidad — Centro Contable Venezolano, Caracas'}
+      ],
+      humanitarias:[
+        {d:'2024',t:'Coordinación y Gestión de Refugios — OIM/IOM, Boa Vista'},
+        {d:'05/03/2024',t:'PRASI (Actualización) — UNDSS/ONU'},
+        {d:'19/02/2024',t:'Conflict Resolution Master Class — UNSSC'},
+        {d:'04/07/2024',t:'PSEA — OIM/IOM'},
+        {d:'04/04/2024',t:'Igualdad de Género y Migración — UN Women'},
+        {d:'05/04/2024',t:'VIH en el lugar de trabajo — UN Cares'},
+        {d:'08/07/2024',t:'IOM Global Induction Programme — OIM/IOM'},
+        {d:'25/03/2023',t:'Protección de Datos / Ética & Conducta / InfoSec — OIM/IOM'},
+        {d:'2022',t:'PSEA • BSAFE • PRASI (UNDSS/ONU)'}
+      ],
+      tecnicasBR:[
+        {d:'17/09/2025',t:'Procesamiento de Lenguaje Natural — Escuela del Trabajador 4.0 (Microsoft+MTE)'},
+        {d:'09/07/2025',t:'Visión general de la IA en Azure — Escuela del Trabajador 4.0'},
+        {d:'03/07/2025',t:'Conceptos básicos de Azure OpenAI — Escuela del Trabajador 4.0'},
+        {d:'20–30/06/2025',t:'Ruta FluêncIA: IA Generativa, Ética, Bing, Evolución de Búsquedas, IA — Escuela del Trabajador 4.0'},
+        {d:'29/06/2025',t:'FluêncIA para PYMES — Escuela del Trabajador 4.0'},
+        {d:'25/06/2025',t:'Copilot — Escuela del Trabajador 4.0'},
+        {d:'21/02/2025',t:'MidJourney — Coursiv'},
+        {d:'21/02/2025',t:'Jasper AI — Coursiv'},
+        {d:'01/12/2024',t:'ChatGPT (uso profesional) — Coursiv'},
+        {d:'02/09/2024',t:'Power BI Expert en la Práctica — Viscari Inc.'},
+        {d:'19/02/2024',t:'Microsoft Excel 2016 – Básico — Fundación Bradesco'},
+        {d:'2024',t:'Simplifica Excel Express (T16) — Simplifica Treinamentos'},
+        {d:'10/08/2023',t:'Semana de Python en la Práctica — EmpowerData'},
+        {d:'05/2023',t:'Simplifica Power Excel — Simplifica Treinamentos'},
+        {d:'03/2023',t:'Simplifica Power BI Express — Simplifica Treinamentos'},
+        {d:'01/2023',t:'Simplifica Excel Express — Simplifica Treinamentos'}
+      ],
+      tecnicasVE:[
+        {d:'2010',t:'Norma NVT ISO 9001:2008 — Gobernación de Bolívar / EPSI La Carioca'},
+        {d:'2010',t:'ISO 9001: Análisis de Causa Raíz — Gobernación de Bolívar / EPSI La Carioca'},
+        {d:'2010',t:'ISO 9001: Enfoque basado en procesos — Gobernación de Bolívar / EPSI La Carioca'},
+        {d:'2010',t:'Marco Lógico para la Elaboración de Proyectos — INFOING'},
+        {d:'2008',t:'Comunicación Efectiva — Eurodistribution C.A.'},
+        {d:'2005',t:'Contabilidad General y Superior — Centro Contable Venezolano'},
+        {d:'2004',t:'Legislación Laboral — Centro Contable Venezolano'},
+        {d:'2002',t:'Impuesto sobre la Renta (ISLR) — Centro Contable Venezolano'}
+      ],
+      experiencias:[
+        {t:'Analista y Científico de Datos — Brasil',d:'mar/2022 – Presente • BI, automatización e IA (Power BI, Python, SQL, n8n), integraciones, dashboards y modelos predictivos.'},
+        {t:'Consultor Independiente — Venezuela (remoto)',d:'2010 – feb/2022 • 2018–2022: análisis de datos; 2010–2018: contabilidad y proyectos financieros.'},
+        {t:'Proyectos Humanitarios — Brasil',d:'2022 – 2024 • Refugios, PSEA, protección de datos; KPIs y procesos (ONU/OIM).'},
+        {t:'SSB Consultores — Analista II',d:'2007 • Contabilidad, reportes y auditoría.'},
+        {t:'Aerocamiones de Venezuela — Analista Tributario',d:'2006–2007 • Registros y declaraciones.'},
+        {t:'CEMR / Cenir Bolívar — Instructor',d:'2008 • Principios contables y controles.'}
+      ],
+      projetos:[
+        {t:'Dashboard Financiero Ejecutivo',d:'KPIs y DRE.',s:'Power BI, SQL'},
+        {t:'Reportes Contables Automáticos',d:'Cierres ágiles.',s:'Python, n8n'},
+        {t:'Integración Sheets ↔ CRM ↔ BD',d:'Datos sincronizados.',s:'n8n, APIs, SQL'},
+        {t:'Chatbot Interno (RAG)',d:'Respuestas 24/7.',s:'OpenAI/Azure, Python'},
+        {t:'Predicción de Ingresos y Caja',d:'Planificación.',s:'Python, Power BI'},
+        {t:'Panel Operativo para Refugios',d:'Ocupación y stock.',s:'Power BI, Sheets, SQL'}
+      ],
+      badges:[
+        'Crear informes interactivos con Copilot para Power BI — 17/03/2025',
+        'Diseñar un modelo semántico en Power BI — 17/03/2025',
+        'Limpiar, transformar y cargar datos en Power BI — 16/03/2025',
+        'Introducción a la compilación con Power BI — 16/03/2025',
+        'Obtener datos en Power BI — 14/03/2025',
+        'Descripción del análisis de datos — 13/03/2025'
+      ],
+      labels:{serv:'Áreas / Servicios', form:'Formación & Certificaciones', acad:'Formación Académica', hum:'Certificaciones Humanitarias (timeline)', tec:'Técnicas y Profesionales', br:'Brasil', ve:'Venezuela', exp:'Experiencia Profesional', port:'Portafolio / Proyectos', cont:'Contacto', vproj:'Ver proyectos', vform:'Formación y certificaciones', wpp:'Hablar por WhatsApp', mail:'Enviar correo', badgesBtn:'Ver mis credenciales en Microsoft Learn ↗'}
+    },
+    en:{
+      chip:'Data Analyst & Data Scientist • BI • AI',
+      title:['Jeysson Zerpa — ', 'Business Intelligence'],
+      tagline:'I transform data and automations into intelligent decisions with human purpose and real impact.',
+      ctaP:'View projects', ctaS:'Education & certifications',
+      servicos:[
+        {t:'Business Intelligence (BI)',d:'Executive dashboards & KPIs.'},
+        {t:'Process Automation',d:'Python, n8n & APIs.'},
+        {t:'Applied AI',d:'Generative & predictive AI for insights.'},
+        {t:'Data Consulting',d:'Metrics, governance & tailored solutions.'},
+        {t:'System Integrations',d:'Sheets, Notion, CRMs & databases.'},
+        {t:'Humanitarian Projects',d:'Analytical solutions with social impact (UN/IOM).'}
+      ],
+      academica:[
+        {d:'08/31/2025',t:'University Extension in BI — Unopar Anhanguera, Londrina'},
+        {d:'07/01/2025 • Ongoing',t:'Technologist in Data Science — Unopar, Prudentópolis'},
+        {d:'03/07/2025 • Ongoing',t:'Data Analysis Program — Alex Lage / Unopar, Londrina'},
+        {d:'12/20/2024',t:'High School (ENCCEJA) — Escola Monteiro Lobato, Roraima'},
+        {d:'10/29/2004',t:'Accounting — Centro Contable Venezolano, Caracas'}
+      ],
+      humanitarias:[
+        {d:'2024',t:'Shelter Coordination & Management — IOM, Boa Vista'},
+        {d:'03/05/2024',t:'PRASI (Update) — UNDSS/UN'},
+        {d:'02/19/2024',t:'Conflict Resolution Master Class — UNSSC'},
+        {d:'07/04/2024',t:'PSEA — IOM'},
+        {d:'04/04/2024',t:'I Know Gender 16 — UN Women'},
+        {d:'04/05/2024',t:'HIV in the Workplace — UN Cares'},
+        {d:'07/08/2024',t:'IOM Global Induction Programme — IOM'},
+        {d:'03/25/2023',t:'Data Protection / Ethics & Conduct / InfoSec — IOM'},
+        {d:'2022',t:'PSEA • BSAFE • PRASI (UNDSS/UN)'}
+      ],
+      tecnicasBR:[
+        {d:'09/17/2025',t:'Natural Language Processing — Escola do Trabalhador 4.0 (Microsoft+MTE)'},
+        {d:'07/09/2025',t:'Azure AI Overview — Escola do Trabalhador 4.0'},
+        {d:'07/03/2025',t:'Azure OpenAI Basics — Escola do Trabalhador 4.0'},
+        {d:'06/20–30/2025',t:'FluêncIA Track: Generative AI, Ethics, Bing, Search Evolution, AI — Escola do Trabalhador 4.0'},
+        {d:'06/29/2025',t:'FluêncIA for SMEs — Escola do Trabalhador 4.0'},
+        {d:'06/25/2025',t:'Copilot — Escola do Trabalhador 4.0'},
+        {d:'02/21/2025',t:'MidJourney — Coursiv'},
+        {d:'02/21/2025',t:'Jasper AI — Coursiv'},
+        {d:'12/01/2024',t:'ChatGPT (professional use) — Coursiv'},
+        {d:'09/02/2024',t:'Power BI Expert — Viscari Inc.'},
+        {d:'02/19/2024',t:'Microsoft Excel 2016 – Basic — Fundação Bradesco'},
+        {d:'2024',t:'Simplifica Excel Express (T16) — Simplifica Treinamentos'},
+        {d:'08/10/2023',t:'Python in Practice Week — EmpowerData'},
+        {d:'05/2023',t:'Simplifica Power Excel — Simplifica Treinamentos'},
+        {d:'03/2023',t:'Simplifica Power BI Express — Simplifica Treinamentos'},
+        {d:'01/2023',t:'Simplifica Excel Express — Simplifica Treinamentos'}
+      ],
+      tecnicasVE:[
+        {d:'2010',t:'NVT ISO 9001:2008 — Gobernación de Bolívar / EPSI La Carioca'},
+        {d:'2010',t:'ISO 9001: Root Cause Analysis — Gobernación de Bolívar / EPSI La Carioca'},
+        {d:'2010',t:'ISO 9001: Process-based Approach — Gobernación de Bolívar / EPSI La Carioca'},
+        {d:'2010',t:'Logical Framework for Project Design — INFOING'},
+        {d:'2008',t:'Effective Communication — Eurodistribution C.A.'},
+        {d:'2005',t:'General & Advanced Accounting — Centro Contable Venezolano'},
+        {d:'2004',t:'Labor Legislation — Centro Contable Venezolano'},
+        {d:'2002',t:'Income Tax (ISLR) — Centro Contable Venezolano'}
+      ],
+      experiencias:[
+        {t:'Data Analyst & Data Scientist — Brazil',d:'Mar/2022 – Present • BI, automation & AI (Power BI, Python, SQL, n8n), integrations, dashboards & predictive models.'},
+        {t:'Independent Consultant — Venezuela (remote)',d:'2010 – Feb/2022 • 2018–2022: data analysis; 2010–2018: accounting & financial projects.'},
+        {t:'Humanitarian Projects — Brazil',d:'2022 – 2024 • Shelters, PSEA, data protection; KPIs & processes (UN/IOM).'},
+        {t:'SSB Consultores — Analyst II',d:'2007 • Accounting, reporting & audit support.'},
+        {t:'Aerocamiones de Venezuela — Tax Analyst',d:'2006–2007 • Bookkeeping & filings.'},
+        {t:'CEMR / Cenir Bolívar — Instructor',d:'2008 • Accounting principles & controls.'}
+      ],
+      projetos:[
+        {t:'Executive Financial BI Dashboard',d:'Standardized KPIs & P&L.',s:'Power BI, SQL'},
+        {t:'Automated Accounting Reports',d:'Faster month‑end close.',s:'Python, n8n'},
+        {t:'Sheets ↔ CRM ↔ DB Integration',d:'Real‑time sync.',s:'n8n, APIs, SQL'},
+        {t:'Internal Knowledge Chatbot (RAG)',d:'24/7 answers.',s:'OpenAI/Azure, Python'},
+        {t:'Revenue & Cash Forecasting',d:'Better planning.',s:'Python, Power BI'},
+        {t:'Humanitarian Shelter Ops Panel',d:'Occupancy & stock.',s:'Power BI, Sheets, SQL'}
+      ],
+      badges:[
+        'Create interactive reports with Copilot for Power BI — 03/17/2025',
+        'Design a semantic model in Power BI — 03/17/2025',
+        'Clean, transform, and load data in Power BI — 03/16/2025',
+        'Get started building with Power BI — 03/16/2025',
+        'Get data in Power BI — 03/14/2025',
+        'Describe the data analysis process — 03/13/2025'
+      ],
+      labels:{serv:'Areas / Services', form:'Education & Certifications', acad:'Academic Background', hum:'Humanitarian Certifications (timeline)', tec:'Technical & Professional', br:'Brazil', ve:'Venezuela', exp:'Professional Experience', port:'Portfolio / Projects', cont:'Contact', vproj:'View projects', vform:'Education & certifications', wpp:'Chat on WhatsApp', mail:'Send email', badgesBtn:'View my Microsoft Learn badges ↗'}
+    }
+  };
+
+  const S = sel=>document.querySelector(sel);
+  const grid = (id, items)=>{const c=S(id); c.innerHTML=''; items.forEach(o=>{const div=document.createElement('div');div.className=id==='services'?'kard':'tl';div.innerHTML = id==='services'?`<h3>${o.t}</h3><div class="muted">${o.d}</div>`:`<div class='dot'></div><div><div>${o.t}</div><div class='muted'>${o.d||''}</div></div>`; c.appendChild(div);});};
+  const listBadges = (arr)=>{const c=S('#badgesGrid'); c.innerHTML=''; arr.forEach(b=>{const k=document.createElement('div'); k.className='kard'; k.textContent=b; c.appendChild(k);});};
+  function render(lang='pt'){
+    const d=Data[lang];
+    S('#chip').textContent=d.chip;
+    S('#title').innerHTML=d.title[0]+`<span>${d.title[1]}</span>`;
+    S('#tagline').textContent=d.tagline;
+    S('#ctaPrimary').textContent=d.ctaP; S('#ctaSecondary').textContent=d.ctaS;
+    grid('#services', d.servicos);
+    grid('#academica', d.academica);
+    grid('#humanitarias', d.humanitarias);
+    grid('#tecnicasBR', d.tecnicasBR);
+    grid('#tecnicasVE', d.tecnicasVE);
+    const exp = S('#experiencias'); exp.innerHTML=''; d.experiencias.forEach(x=>{const c=document.createElement('div'); c.className='kard'; c.innerHTML=`<h3>${x.t}</h3><div class='muted'>${x.d}</div>`; exp.appendChild(c);});
+    const pr = S('#projetos'); pr.innerHTML=''; d.projetos.forEach(p=>{const c=document.createElement('div'); c.className='kard'; c.innerHTML=`<h3>${p.t}</h3><div class='muted'>${p.d}</div><div class='muted'>Stack: ${p.s}</div>`; pr.appendChild(c);});
+    listBadges(d.badges);
+    // labels
+    S('#s_h2').textContent=d.labels.serv; S('#f_h2').textContent=d.labels.form; S('#acad_h3').textContent=d.labels.acad; S('#hum_h3').textContent=d.labels.hum; S('#tec_h3').textContent=d.labels.tec; S('#tec_br_h4').textContent=d.labels.br; S('#tec_ve_h4').textContent=d.labels.ve; S('#exp_h2').textContent=d.labels.exp; S('#port_h2').textContent=d.labels.port; S('#c_h2').textContent=d.labels.cont; S('#ctaPrimary').textContent=d.labels.vproj; S('#ctaSecondary').textContent=d.labels.vform; S('#cta_whats').textContent=d.labels.wpp; S('#cta_email').textContent=d.labels.mail; S('#badgeBtn').textContent=d.labels.badgesBtn;
+  }
+  render('pt');
+
+  document.querySelectorAll('.lang button').forEach(b=>{
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('.lang button').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active'); render(b.dataset.lang);
+    })
+  })
+
+  // year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Microsoft Learn link placeholder
+  const learnURL = 'TU_URL_DE_MICROSOFT_LEARN';
+  document.getElementById('badgeBtn').href = learnURL;
+  </script>
+</body>
+</html>
+
