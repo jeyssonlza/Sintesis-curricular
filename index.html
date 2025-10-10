@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeysson Zerpa — Analista & Cientista de Dados | BI & IA</title>
+  <meta name="description" content="Portfólio multilíngue (PT/ES/EN) de Jeysson Zerpa — Analista e Cientista de Dados, BI, Automação e IA, com experiência humanitária.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -12,18 +13,19 @@
       --bg:#0b1020; --bg2:#0f1530; --pri:#65f7da; --sec:#78a6ff; --acc:#ffd166; --mut:#9aa5b1; --card:#121938; --glass:rgba(18,25,56,.6);
     }
     *{box-sizing:border-box}
-    html,body{height:100%;}
+    html,body{height:100%}
     body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:radial-gradient(1200px 700px at 20% -10%, #1c275a 0%, transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2));color:#e6e9ef;overflow-x:hidden}
     a{color:var(--pri);text-decoration:none}
     .container{max-width:1200px;margin:0 auto;padding:0 20px}
     header{position:fixed;top:0;left:0;right:0;z-index:20;background:linear-gradient(180deg,rgba(11,16,32,.9),rgba(11,16,32,.35));backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
-    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px;flex-wrap:wrap}
     .brand{display:flex;gap:12px;align-items:center}
     .logo{width:36px;height:36px;border-radius:10px;background:conic-gradient(from 210deg at 50% 50%,var(--pri),var(--sec),#9b66ff,var(--pri));box-shadow:0 0 24px rgba(101,247,218,.35)}
     .brand h1{margin:0;font-size:16px;font-weight:700;letter-spacing:.4px}
+    .brand .sub{margin:2px 0 0;font-size:12px;color:#c7cfdb}
     .nav-links{display:flex;gap:18px;flex-wrap:wrap}
     .nav-links a{font-size:14px;color:#d9deea;opacity:.85}
-    .actions{display:flex;gap:10px}
+    .actions{display:flex;gap:10px;align-items:center}
     .btn{border:1px solid rgba(255,255,255,.15);padding:8px 14px;border-radius:12px;font-weight:600;font-size:13px;color:#e8ecf5;background:rgba(255,255,255,.04);transition:.25s}
     .btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.3)}
     .btn.primary{background:linear-gradient(180deg,var(--pri),#39d7b4);color:#031016;border-color:transparent;box-shadow:0 10px 30px rgba(101,247,218,.25)}
@@ -32,7 +34,7 @@
     .lang button.active{background:linear-gradient(180deg,#1b2448,#0f1736);color:#fff}
 
     /* Hero */
-    .hero{position:relative;min-height:88vh;display:grid;place-items:center;padding-top:84px}
+    .hero{position:relative;min-height:88vh;display:grid;place-items:center;padding-top:92px}
     canvas#scene{position:absolute;inset:0;z-index:0}
     .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
     .chip{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.05);font-size:12px;color:#cfe6ff}
@@ -60,6 +62,7 @@
     footer{padding:36px 0;text-align:center;color:#aab6c8}
     .badge{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(255,255,255,.1);padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.03)}
     .btn.link{background:transparent;border-color:rgba(255,255,255,.2)}
+    .sr-only{position:absolute;left:-9999px}
   </style>
 </head>
 <body>
@@ -67,42 +70,45 @@
     <div class="container">
       <nav>
         <div class="brand">
-          <div class="logo"></div>
-          <h1>Jeysson L. Z. Armas • Data & BI</h1>
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <h1 id="brandTitle">Jeysson L. Z. Armas • Data & BI</h1>
+            <div class="sub" id="brandSub">Analista e Cientista de Dados • BI • IA • Automação</div>
+          </div>
         </div>
         <div class="nav-links">
-          <a href="#servicos">Serviços</a>
-          <a href="#formacao">Formação</a>
-          <a href="#experiencia">Experiência</a>
-          <a href="#portfolio">Portfólio</a>
-          <a href="#badges">Insígnias</a>
-          <a href="#contato">Contato</a>
+          <a id="navServ" href="#servicos">Serviços</a>
+          <a id="navForm" href="#formacao">Formação</a>
+          <a id="navExp" href="#experiencia">Experiência</a>
+          <a id="navPort" href="#portfolio">Portfólio</a>
+          <a id="navBadges" href="#badges">Insígnias</a>
+          <a id="navCont" href="#contato">Contato</a>
         </div>
         <div class="actions">
-          <div class="lang">
-            <button data-lang="pt" class="active">PT</button>
+          <div class="lang" aria-label="Language">
+            <button data-lang="pt" class="active" aria-pressed="true">PT</button>
             <button data-lang="es">ES</button>
             <button data-lang="en">EN</button>
           </div>
-          <a class="btn primary" href="#contato">Fazer Contato</a>
+          <a class="btn primary" href="#contato" id="ctaHeader">Fazer Contato</a>
         </div>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <canvas id="scene"></canvas>
+  <section class="hero" aria-labelledby="heroTitle">
+    <canvas id="scene" aria-hidden="true"></canvas>
     <div class="container hero-inner">
       <div>
         <div class="chip" id="chip">Analista & Cientista de Dados • BI • IA</div>
-        <h1 class="title" id="title">Jeysson Zerpa — <span>Business Intelligence</span> & IA</h1>
+        <h1 class="title" id="heroTitle">Jeysson Zerpa — <span>Business Intelligence</span> & IA</h1>
         <p class="tagline" id="tagline">Transformo dados e automações em decisões inteligentes com propósito humano e impacto real.</p>
         <div class="cta">
           <a href="#portfolio" class="btn primary" id="ctaPrimary">Ver projetos</a>
           <a href="#formacao" class="btn link" id="ctaSecondary">Formação & certificações</a>
         </div>
       </div>
-      <div class="card3d">
+      <div class="card3d" aria-label="Resumo de competências">
         <div class="badge">📍 Brasil • 🌎 Atuação internacional • 🇻🇪 Base contábil</div>
         <div class="muted" id="heroBullets">
           • BI (Power BI)
@@ -165,12 +171,11 @@
     </div>
   </section>
 
-  <section id="badges">
+  <section id="badges" aria-labelledby="badgesTitle">
     <div class="container">
-      <h2>Insígnias Microsoft Learn — Power BI & Copilot (mar/2025)</h2>
+      <h2 id="badgesTitle">Insígnias Microsoft Learn — Power BI & Copilot</h2>
       <div class="grid cols-3" id="badgesGrid"></div>
-      <div style="margin-top:14px">
-      </div>
+      <!-- Sem link externo por solicitação -->
     </div>
   </section>
 
@@ -182,16 +187,17 @@
           <h3 id="c_h3">Vamos conversar</h3>
           <p class="muted" id="c_p">Envie uma mensagem e receba uma demonstração personalizada de BI/IA para o seu contexto.</p>
           <div class="cta">
-            <a class="btn primary" href="https://wa.me/" target="_blank" id="cta_whats">Falar no WhatsApp</a>
-            <a class="btn" href="mailto:" id="cta_email">Enviar e-mail</a>
+            <a class="btn primary" href="https://wa.me/5535998889882" target="_blank" rel="noopener" id="cta_whats">Falar no WhatsApp (+55 (35) 9 9888-9882)</a>
+            <a class="btn" href="mailto:jeyssonzerpa@gmail.com" id="cta_email">Enviar e-mail</a>
+            <a class="btn" href="https://www.linkedin.com/in/jeysson-leoncio-z-712661249/" target="_blank" rel="noopener" id="cta_linkedin">LinkedIn</a>
           </div>
         </div>
         <div class="kard">
-          <h3>Links rápidos</h3>
+          <h3 id="links_h3">Links rápidos</h3>
           <ul class="muted" style="line-height:1.9">
-            <li><a href="#portfolio">Projetos</a></li>
-            <li><a href="#formacao">Formação & Certificações</a></li>
-            <li><a href="#badges">Insígnias Microsoft Learn</a></li>
+            <li><a href="#portfolio" id="lk_proj">Projetos</a></li>
+            <li><a href="#formacao" id="lk_form">Formação & Certificações</a></li>
+            <li><a href="#badges" id="lk_badge">Insígnias Microsoft Learn</a></li>
           </ul>
         </div>
       </div>
@@ -202,39 +208,46 @@
     <div class="container">© <span id="year"></span> Jeysson Zerpa — Data • BI • IA</div>
   </footer>
 
-  <!-- three.js for interactive 3D background -->
-  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <!-- three.js for interactive 3D background (defer for performance) -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js" defer></script>
   <script>
   // ---------- 3D Scene (subtle, professional) ----------
-  const canvas = document.getElementById('scene');
-  const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(55, innerWidth/innerHeight, 0.1, 100);
-  camera.position.set(0,0,6);
-  const resize = ()=>{
-    renderer.setSize(innerWidth, innerHeight);
-    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-    camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();
-  }; resize(); addEventListener('resize', resize);
+  window.addEventListener('load',()=>{
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const canvas = document.getElementById('scene');
+    const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(55, innerWidth/innerHeight, 0.1, 100);
+    camera.position.set(0,0,6);
+    const resize = ()=>{ renderer.setSize(innerWidth, innerHeight); renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix(); };
+    resize(); addEventListener('resize', resize);
 
-  // Particles
-  const geo = new THREE.BufferGeometry();
-  const count = 900;
-  const positions = new Float32Array(count*3);
-  for (let i=0;i<count;i++){const r= Math.random()*3.8+1.6; const a=Math.random()*Math.PI*2; const b=Math.acos(Math.random()*2-1); positions[i*3]=r*Math.sin(b)*Math.cos(a); positions[i*3+1]=r*Math.sin(b)*Math.sin(a); positions[i*3+2]=r*Math.cos(b);} 
-  geo.setAttribute('position', new THREE.BufferAttribute(positions,3));
-  const mat = new THREE.PointsMaterial({size:0.02, color:0x65f7da, transparent:true, opacity:.85});
-  const points = new THREE.Points(geo, mat); scene.add(points);
+    // Particles
+    const geo = new THREE.BufferGeometry();
+    const count = prefersReduced? 300 : 900;
+    const positions = new Float32Array(count*3);
+    for (let i=0;i<count;i++){ const r= Math.random()*3.8+1.6; const a=Math.random()*Math.PI*2; const b=Math.acos(Math.random()*2-1); positions[i*3]=r*Math.sin(b)*Math.cos(a); positions[i*3+1]=r*Math.sin(b)*Math.sin(a); positions[i*3+2]=r*Math.cos(b);} 
+    geo.setAttribute('position', new THREE.BufferAttribute(positions,3));
+    const mat = new THREE.PointsMaterial({size:0.018, color:0x65f7da, transparent:true, opacity:.55, depthWrite:false, blending:THREE.AdditiveBlending});
+    const points = new THREE.Points(geo, mat); scene.add(points);
 
-  // Wireframe sphere
-  const sphere = new THREE.Mesh(
-    new THREE.SphereGeometry(2.5, 32, 32),
-    new THREE.MeshBasicMaterial({wireframe:true, color:0x78a6ff, transparent:true, opacity:.25})
-  );
-  scene.add(sphere);
+    // Wireframe sphere
+    const sphere = new THREE.Mesh(
+      new THREE.SphereGeometry(2.5, 32, 32),
+      new THREE.MeshBasicMaterial({wireframe:true, color:0x9bb6ff, transparent:true, opacity:.6})
+    ); scene.add(sphere);
 
-  let mx=0,my=0; addEventListener('mousemove',e=>{mx=(e.clientX/innerWidth-.5)*0.6; my=(e.clientY/innerHeight-.5)*0.6});
-  (function animate(){requestAnimationFrame(animate); sphere.rotation.y+=0.002; points.rotation.y+=0.0015; sphere.rotation.x = my; points.rotation.x= my*1.2; camera.position.x += (mx*2 - camera.position.x)*0.03; camera.position.y += (-my*2 - camera.position.y)*0.03; camera.lookAt(0,0,0); renderer.render(scene,camera);})();
+    let mx=0,my=0; addEventListener('mousemove',e=>{mx=(e.clientX/innerWidth-.5)*0.6; my=(e.clientY/innerHeight-.5)*0.6});
+    function animate(){
+      requestAnimationFrame(animate);
+      if(!prefersReduced){
+        sphere.rotation.y+=0.002; points.rotation.y+=0.0015; sphere.rotation.x = my; points.rotation.x= my*1.2; camera.position.x += (mx*2 - camera.position.x)*0.03; camera.position.y += (-my*2 - camera.position.y)*0.03;
+      }
+      camera.lookAt(0,0,0);
+      renderer.render(scene,camera);
+    }
+    animate();
+  });
   </script>
 
   <script>
@@ -244,7 +257,9 @@
       chip:'Analista & Cientista de Dados • BI • IA',
       title:['Jeysson Zerpa — ', 'Business Intelligence'],
       tagline:'Transformo dados e automações em decisões inteligentes com propósito humano e impacto real.',
-      ctaP:'Ver projetos', ctaS:'Formação & certificações',
+      ctaP:'Ver projetos', ctaS:'Formação & certificações', headerCTA:'Fazer Contato',
+      nav:{serv:'Serviços', form:'Formação', exp:'Experiência', port:'Portfólio', badges:'Insígnias', cont:'Contato'},
+      brandSub:'Analista e Cientista de Dados • BI • IA • Automação',
       servicos:[
         {t:'Business Intelligence (BI)',d:'Dashboards executivos e KPIs para decisões rápidas.'},
         {t:'Automação de Processos',d:'Python, n8n e APIs para reduzir custos e erros.'},
@@ -322,16 +337,15 @@
         'Introdução à criação com o Power BI — 16/03/2025',
         'Obter dados no Power BI — 14/03/2025',
         'Descrição da análise de dados — 13/03/2025'
-      ],
-      labels:{
-        serv:'Áreas de atuação / Serviços', form:'Formação & Certificações', acad:'Formação Acadêmica (ordem estratégica BR)', hum:'Certificações Humanitárias (timeline)', tec:'Certificações Técnicas e Profissionais', br:'Brasil', ve:'Venezuela', exp:'Experiência Profissional', port:'Portfólio / Projetos', cont:'Contato', vproj:'Ver projetos', vform:'Formação & certificações', wpp:'Falar no WhatsApp', mail:'Enviar e-mail', badgesBtn:'Ver minhas credenciais no Microsoft Learn ↗'
-      }
+      ]
     },
     es:{
       chip:'Analista y Científico de Datos • BI • IA',
       title:['Jeysson Zerpa — ', 'Inteligencia de Negocios'],
       tagline:'Transformo datos y automatizaciones en decisiones inteligentes con propósito humano e impacto real.',
-      ctaP:'Ver proyectos', ctaS:'Formación y certificaciones',
+      ctaP:'Ver proyectos', ctaS:'Formación y certificaciones', headerCTA:'Contactar',
+      nav:{serv:'Servicios', form:'Formación', exp:'Experiencia', port:'Portafolio', badges:'Insignias', cont:'Contacto'},
+      brandSub:'Analista y Científico de Datos • BI • IA • Automatización',
       servicos:[
         {t:'Business Intelligence (BI)',d:'Dashboards ejecutivos y KPIs.'},
         {t:'Automatización de Procesos',d:'Python, n8n y APIs.'},
@@ -409,14 +423,15 @@
         'Introducción a la compilación con Power BI — 16/03/2025',
         'Obtener datos en Power BI — 14/03/2025',
         'Descripción del análisis de datos — 13/03/2025'
-      ],
-      labels:{serv:'Áreas / Servicios', form:'Formación & Certificaciones', acad:'Formación Académica', hum:'Certificaciones Humanitarias (timeline)', tec:'Técnicas y Profesionales', br:'Brasil', ve:'Venezuela', exp:'Experiencia Profesional', port:'Portafolio / Proyectos', cont:'Contacto', vproj:'Ver proyectos', vform:'Formación y certificaciones', wpp:'Hablar por WhatsApp', mail:'Enviar correo', badgesBtn:'Ver mis credenciales en Microsoft Learn ↗'}
+      ]
     },
     en:{
       chip:'Data Analyst & Data Scientist • BI • AI',
       title:['Jeysson Zerpa — ', 'Business Intelligence'],
       tagline:'I transform data and automations into intelligent decisions with human purpose and real impact.',
-      ctaP:'View projects', ctaS:'Education & certifications',
+      ctaP:'View projects', ctaS:'Education & certifications', headerCTA:'Contact',
+      nav:{serv:'Services', form:'Education', exp:'Experience', port:'Portfolio', badges:'Badges', cont:'Contact'},
+      brandSub:'Data Analyst & Data Scientist • BI • AI • Automation',
       servicos:[
         {t:'Business Intelligence (BI)',d:'Executive dashboards & KPIs.'},
         {t:'Process Automation',d:'Python, n8n & APIs.'},
@@ -481,8 +496,8 @@
       ],
       projetos:[
         {t:'Executive Financial BI Dashboard',d:'Standardized KPIs & P&L.',s:'Power BI, SQL'},
-        {t:'Automated Accounting Reports',d:'Faster month‑end close.',s:'Python, n8n'},
-        {t:'Sheets ↔ CRM ↔ DB Integration',d:'Real‑time sync.',s:'n8n, APIs, SQL'},
+        {t:'Automated Accounting Reports',d:'Faster month-end close.',s:'Python, n8n'},
+        {t:'Sheets ↔ CRM ↔ DB Integration',d:'Real-time sync.',s:'n8n, APIs, SQL'},
         {t:'Internal Knowledge Chatbot (RAG)',d:'24/7 answers.',s:'OpenAI/Azure, Python'},
         {t:'Revenue & Cash Forecasting',d:'Better planning.',s:'Python, Power BI'},
         {t:'Humanitarian Shelter Ops Panel',d:'Occupancy & stock.',s:'Power BI, Sheets, SQL'}
@@ -494,20 +509,24 @@
         'Get started building with Power BI — 03/16/2025',
         'Get data in Power BI — 03/14/2025',
         'Describe the data analysis process — 03/13/2025'
-      ],
-      labels:{serv:'Areas / Services', form:'Education & Certifications', acad:'Academic Background', hum:'Humanitarian Certifications (timeline)', tec:'Technical & Professional', br:'Brazil', ve:'Venezuela', exp:'Professional Experience', port:'Portfolio / Projects', cont:'Contact', vproj:'View projects', vform:'Education & certifications', wpp:'Chat on WhatsApp', mail:'Send email', badgesBtn:'View my Microsoft Learn badges ↗'}
+      ]
     }
   };
 
   const S = sel=>document.querySelector(sel);
-  const grid = (id, items)=>{const c=S(id); c.innerHTML=''; items.forEach(o=>{const div=document.createElement('div');div.className=id==='services'?'kard':'tl';div.innerHTML = id==='services'?`<h3>${o.t}</h3><div class="muted">${o.d}</div>`:`<div class='dot'></div><div><div>${o.t}</div><div class='muted'>${o.d||''}</div></div>`; c.appendChild(div);});};
+  const grid = (id, items)=>{const c=S(id); c.innerHTML=''; items.forEach(o=>{const div=document.createElement('div');div.className=id==='#services'?'kard':'tl';div.innerHTML = id==='#services'?`<h3>${o.t}</h3><div class="muted">${o.d}</div>`:`<div class='dot'></div><div><div>${o.t}</div><div class='muted'>${o.d||''}</div></div>`; c.appendChild(div);});};
   const listBadges = (arr)=>{const c=S('#badgesGrid'); c.innerHTML=''; arr.forEach(b=>{const k=document.createElement('div'); k.className='kard'; k.textContent=b; c.appendChild(k);});};
   function render(lang='pt'){
     const d=Data[lang];
+    // hero
     S('#chip').textContent=d.chip;
-    S('#title').innerHTML=d.title[0]+`<span>${d.title[1]}</span>`;
+    S('#heroTitle').innerHTML=d.title[0]+`<span>${d.title[1]}</span>`;
     S('#tagline').textContent=d.tagline;
     S('#ctaPrimary').textContent=d.ctaP; S('#ctaSecondary').textContent=d.ctaS;
+    // header/nav
+    S('#ctaHeader').textContent=d.headerCTA||S('#ctaHeader').textContent;
+    S('#navServ').textContent=d.nav.serv; S('#navForm').textContent=d.nav.form; S('#navExp').textContent=d.nav.exp; S('#navPort').textContent=d.nav.port; S('#navBadges').textContent=d.nav.badges; S('#navCont').textContent=d.nav.cont; S('#brandSub').textContent=d.brandSub;
+    // sections
     grid('#services', d.servicos);
     grid('#academica', d.academica);
     grid('#humanitarias', d.humanitarias);
@@ -516,27 +535,27 @@
     const exp = S('#experiencias'); exp.innerHTML=''; d.experiencias.forEach(x=>{const c=document.createElement('div'); c.className='kard'; c.innerHTML=`<h3>${x.t}</h3><div class='muted'>${x.d}</div>`; exp.appendChild(c);});
     const pr = S('#projetos'); pr.innerHTML=''; d.projetos.forEach(p=>{const c=document.createElement('div'); c.className='kard'; c.innerHTML=`<h3>${p.t}</h3><div class='muted'>${p.d}</div><div class='muted'>Stack: ${p.s}</div>`; pr.appendChild(c);});
     listBadges(d.badges);
-    // labels
-    S('#s_h2').textContent=d.labels.serv; S('#f_h2').textContent=d.labels.form; S('#acad_h3').textContent=d.labels.acad; S('#hum_h3').textContent=d.labels.hum; S('#tec_h3').textContent=d.labels.tec; S('#tec_br_h4').textContent=d.labels.br; S('#tec_ve_h4').textContent=d.labels.ve; S('#exp_h2').textContent=d.labels.exp; S('#port_h2').textContent=d.labels.port; S('#c_h2').textContent=d.labels.cont; S('#ctaPrimary').textContent=d.labels.vproj; S('#ctaSecondary').textContent=d.labels.vform; S('#cta_whats').textContent=d.labels.wpp; S('#cta_email').textContent=d.labels.mail; S('#badgeBtn').textContent=d.labels.badgesBtn;
+    // footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // update quick links
+    S('#links_h3').textContent = lang==='en'?'Quick links':(lang==='es'?'Enlaces rápidos':'Links rápidos');
+    S('#lk_proj').textContent = d.nav.port; S('#lk_form').textContent = d.nav.form+' & '+(lang==='en'?'Certifications':(lang==='es'?'Certificaciones':'Certificações')); S('#lk_badge').textContent = (lang==='en'?'Microsoft Learn Badges':(lang==='es'?'Insignias Microsoft Learn':'Insígnias Microsoft Learn'));
+    // contact CTA labels
+    S('#c_h2').textContent = d.nav.cont; S('#c_h3').textContent = lang==='en'?'Let\'s talk':(lang==='es'?'Hablemos':'Vamos conversar');
+    S('#c_p').textContent = lang==='en'?'Send a message and receive a tailored BI/AI demo for your context.':(lang==='es'?'Envíame un mensaje y recibe una demo personalizada de BI/IA para tu contexto.':'Envie uma mensagem e receba uma demonstração personalizada de BI/IA para o seu contexto.');
+    S('#cta_whats').textContent = lang==='en'?'Chat on WhatsApp (+55 (35) 9 9888-9882)':(lang==='es'?'Hablar por WhatsApp (+55 (35) 9 9888-9882)':'Falar no WhatsApp (+55 (35) 9 9888-9882)');
+    S('#cta_email').textContent = lang==='en'?'Send email':(lang==='es'?'Enviar correo':'Enviar e-mail');
+    S('#cta_linkedin').textContent = 'LinkedIn';
   }
   render('pt');
 
   document.querySelectorAll('.lang button').forEach(b=>{
     b.addEventListener('click',()=>{
       document.querySelectorAll('.lang button').forEach(x=>x.classList.remove('active'));
-      b.classList.add('active'); render(b.dataset.lang);
+      b.classList.add('active'); b.setAttribute('aria-pressed','true');
+      render(b.dataset.lang);
     })
   })
-   
-
-  // year
-  document.getElementById('year').textContent = new Date().getFullYear();
-
   </script>
 </body>
 </html>
-
-
-
-
-
