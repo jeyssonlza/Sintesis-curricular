@@ -1,5 +1,15 @@
 # 🌎 Portfólio Multilíngue — Jeysson Zerpa
 
+## 🚀 Projeto em Destaque
+
+### Centralização e Automação de Fluxos de Dados – Operação com Migrantes
+
+**Projeto:** Centralização e Automação de Fluxos de Dados – Operação com Migrantes  
+**Organização:** OIM / Operação Acolhida  
+**Descrição:** Desenvolvimento de fluxo centralizado de dados para unificar informações de abrigos, interiorização e atendimento social, reduzindo em cerca de 80% o tempo de preparação de relatórios e aumentando o acesso à informação para decisões operacionais.
+
+---
+
 **Analista e Cientista de Dados | Business Intelligence | IA | Automação**
 
 Este é o meu portfólio pessoal desenvolvido em HTML, CSS e JavaScript puro, com suporte multilíngue (PT/ES/EN) e animações 3D com **Three.js**.  
