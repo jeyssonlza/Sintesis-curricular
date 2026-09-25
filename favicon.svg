@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Jeysson Zerpa — Data &amp; BI">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#65f7da"/>
+      <stop offset=".52" stop-color="#78a6ff"/>
+      <stop offset="1" stop-color="#9b66ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#g)"/>
+  <g fill="#08122a">
+    <rect x="15" y="37" width="9" height="12" rx="3"/>
+    <rect x="27.5" y="27" width="9" height="22" rx="3"/>
+    <rect x="40" y="16" width="9" height="33" rx="3"/>
+  </g>
+</svg>

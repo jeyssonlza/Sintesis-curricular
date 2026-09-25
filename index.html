@@ -3,80 +3,288 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Jeysson Zerpa — Analista & Cientista de Dados | BI & IA</title>
-  <meta name="description" content="Portfólio multilíngue (PT/ES/EN) de Jeysson Zerpa — Analista e Cientista de Dados, BI, Automação e IA, com experiência humanitária.">
+  <meta name="description" content="Portfólio multilíngue (PT/ES/EN) de Jeysson Zerpa — Analista e Cientista de Dados, BI, Automação e IA, com experiência humanitária (ONU/OIM).">
+  <meta name="author" content="Jeysson Zerpa">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b1020">
+  <link rel="canonical" href="https://sintesis-curricular.vercel.app/">
+
+  <!-- Ícones -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Open Graph (LinkedIn, WhatsApp, Facebook) -->
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Jeysson Zerpa — Data • BI • IA">
+  <meta property="og:title" content="Jeysson Zerpa — Analista & Cientista de Dados | BI & IA">
+  <meta property="og:description" content="BI, Automação e IA aplicada. Power BI, Python, SQL e n8n — com experiência humanitária (ONU/OIM). Portfólio em PT/ES/EN.">
+  <meta property="og:url" content="https://sintesis-curricular.vercel.app/">
+  <meta property="og:image" content="https://sintesis-curricular.vercel.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Jeysson Zerpa — Analista e Cientista de Dados, BI e IA">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="profile:first_name" content="Jeysson">
+  <meta property="profile:last_name" content="Zerpa">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jeysson Zerpa — Analista & Cientista de Dados | BI & IA">
+  <meta name="twitter:description" content="BI, Automação e IA aplicada. Power BI, Python, SQL e n8n — com experiência humanitária (ONU/OIM).">
+  <meta name="twitter:image" content="https://sintesis-curricular.vercel.app/og-image.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Dados estruturados para buscadores -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jeysson Zerpa",
+    "alternateName": "Jeysson Leoncio Zerpa Armas",
+    "jobTitle": "Analista e Cientista de Dados",
+    "description": "Analista e Cientista de Dados especializado em Business Intelligence, Automação de Processos e IA aplicada.",
+    "url": "https://sintesis-curricular.vercel.app/",
+    "image": "https://sintesis-curricular.vercel.app/og-image.png",
+    "email": "mailto:jeyssonzerpa@gmail.com",
+    "telephone": "+5535998889882",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Prudentópolis",
+      "addressRegion": "PR",
+      "addressCountry": "BR"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/jeysson-leoncio-z-712661249/",
+      "https://github.com/jeyssonlza"
+    ],
+    "knowsLanguage": ["pt-BR", "es-ES", "en-US"],
+    "knowsAbout": [
+      "Business Intelligence",
+      "Power BI",
+      "Ciência de Dados",
+      "Python",
+      "SQL",
+      "Automação de Processos",
+      "n8n",
+      "Inteligência Artificial",
+      "Contabilidade"
+    ],
+    "alumniOf": [
+      { "@type": "EducationalOrganization", "name": "Unopar Anhanguera" },
+      { "@type": "EducationalOrganization", "name": "Centro Contable Venezolano" }
+    ]
+  }
+  </script>
+
   <style>
     :root{
-      --bg:#0b1020; --bg2:#0f1530; --pri:#65f7da; --sec:#78a6ff; --acc:#ffd166; --mut:#9aa5b1; --card:#121938; --glass:rgba(18,25,56,.6);
+      /* Cores */
+      --bg:#0b1020; --bg2:#0f1530;
+      --pri:#65f7da; --sec:#78a6ff; --vio:#9b66ff;
+      --txt:#e6e9ef; --txt-2:#c7cfdb; --txt-3:#9fb0c6;
+      --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.15);
+      --glass:rgba(18,25,56,.6);
+      /* Layout — --header-h é recalculada em JS conforme a altura real do header */
+      --header-h:76px; --maxw:1200px;
     }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 20px)}
     html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:radial-gradient(1200px 700px at 20% -10%, #1c275a 0%, transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2));color:#e6e9ef;overflow-x:hidden}
+    body{
+      margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+      background:radial-gradient(1200px 700px at 20% -10%, #1c275a 0%, transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2));
+      background-color:var(--bg);
+      color:var(--txt);overflow-x:hidden;
+    }
     a{color:var(--pri);text-decoration:none}
-    .container{max-width:1200px;margin:0 auto;padding:0 20px}
-    header{position:fixed;top:0;left:0;right:0;z-index:20;background:linear-gradient(180deg,rgba(11,16,32,.9),rgba(11,16,32,.35));backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
-    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px;flex-wrap:wrap}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:36px;height:36px;border-radius:10px;background:conic-gradient(from 210deg at 50% 50%,var(--pri),var(--sec),#9b66ff,var(--pri));box-shadow:0 0 24px rgba(101,247,218,.35)}
-    .brand h1{margin:0;font-size:16px;font-weight:700;letter-spacing:.4px}
-    .brand .sub{margin:2px 0 0;font-size:12px;color:#c7cfdb}
-    .nav-links{display:flex;gap:18px;flex-wrap:wrap}
-    .nav-links a{font-size:14px;color:#d9deea;opacity:.85}
-    .actions{display:flex;gap:10px;align-items:center}
-    .btn{border:1px solid rgba(255,255,255,.15);padding:8px 14px;border-radius:12px;font-weight:600;font-size:13px;color:#e8ecf5;background:rgba(255,255,255,.04);transition:.25s}
-    .btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.3)}
+    img{max-width:100%;height:auto}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+    /* --- Acessibilidade: foco sempre visível + link para saltar ao conteúdo --- */
+    :focus-visible{outline:2px solid var(--pri);outline-offset:3px;border-radius:6px}
+    .skip-link{
+      position:fixed;left:12px;top:-120px;z-index:100;
+      padding:10px 16px;border-radius:0 0 10px 10px;
+      background:var(--pri);color:#031016;font-weight:700;font-size:14px;
+      transition:top .2s ease;
+    }
+    .skip-link:focus{top:0}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    /* --- Header --- */
+    header{position:fixed;top:0;left:0;right:0;z-index:20;background:linear-gradient(180deg,rgba(11,16,32,.92),rgba(11,16,32,.45));backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:16px}
+    .brand{display:flex;gap:12px;align-items:center;min-width:0;flex:1 1 auto}
+    .brand>div{min-width:0}
+    .logo{flex:0 0 auto;width:36px;height:36px;border-radius:10px;background:conic-gradient(from 210deg at 50% 50%,var(--pri),var(--sec),var(--vio),var(--pri));box-shadow:0 0 24px rgba(101,247,218,.35)}
+    .brand .name{margin:0;font-size:16px;font-weight:700;letter-spacing:.4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .brand .sub{margin:2px 0 0;font-size:12px;color:var(--txt-2)}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{font-size:14px;color:#d9deea;opacity:.85;transition:opacity .2s,color .2s}
+    .nav-links a:hover,.nav-links a:focus-visible{opacity:1;color:var(--pri)}
+    .actions{display:flex;gap:10px;align-items:center;flex:0 0 auto}
+
+    .btn{display:inline-block;border:1px solid var(--line-2);padding:8px 14px;border-radius:12px;font-weight:600;font-size:13px;color:#e8ecf5;background:rgba(255,255,255,.04);transition:transform .25s,border-color .25s,box-shadow .25s}
+    .btn:hover,.btn:focus-visible{transform:translateY(-1px);border-color:rgba(255,255,255,.3)}
     .btn.primary{background:linear-gradient(180deg,var(--pri),#39d7b4);color:#031016;border-color:transparent;box-shadow:0 10px 30px rgba(101,247,218,.25)}
+    .btn.link{background:transparent;border-color:rgba(255,255,255,.2)}
     .lang{display:flex;gap:6px}
-    .lang button{all:unset;cursor:pointer;padding:6px 10px;border-radius:10px;border:1px solid rgba(255,255,255,.12);font-size:12px;color:#c9d1e5}
-    .lang button.active{background:linear-gradient(180deg,#1b2448,#0f1736);color:#fff}
+    .lang button{
+      appearance:none;-webkit-appearance:none;margin:0;font-family:inherit;
+      cursor:pointer;padding:6px 10px;border-radius:10px;
+      border:1px solid rgba(255,255,255,.12);background:transparent;
+      font-size:12px;font-weight:600;color:#c9d1e5;transition:background .2s,color .2s,border-color .2s;
+    }
+    .lang button:hover{border-color:var(--line-2);color:#fff}
+    .lang button[aria-pressed="true"]{background:linear-gradient(180deg,#1b2448,#0f1736);color:#fff;border-color:rgba(255,255,255,.22)}
 
-    /* Hero */
-    .hero{position:relative;min-height:88vh;display:grid;place-items:center;padding-top:92px}
-    canvas#scene{position:absolute;inset:0;z-index:0}
-    .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
-    .chip{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.05);font-size:12px;color:#cfe6ff}
-    .title{font-size:48px;line-height:1.05;margin:14px 0}
+    /* Botão do menu móvel — escondido no desktop */
+    .nav-toggle{
+      display:none;appearance:none;-webkit-appearance:none;
+      cursor:pointer;width:40px;height:38px;border-radius:11px;
+      border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);
+      padding:0;place-items:center;
+    }
+    .nav-toggle span{display:block;width:18px;height:2px;border-radius:2px;background:#dbe2f0;position:relative;transition:transform .25s,background .25s}
+    .nav-toggle span::before,.nav-toggle span::after{content:'';position:absolute;left:0;width:18px;height:2px;border-radius:2px;background:#dbe2f0;transition:transform .25s,top .25s}
+    .nav-toggle span::before{top:-6px}
+    .nav-toggle span::after{top:6px}
+    .nav-toggle[aria-expanded="true"] span{background:transparent}
+    .nav-toggle[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+    .nav-toggle[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+
+    /* --- Hero --- */
+    .hero{position:relative;overflow:hidden;min-height:88vh;display:grid;place-items:center;padding-top:calc(var(--header-h) + 32px);padding-bottom:40px}
+    canvas#scene{position:absolute;inset:0;width:100%;height:100%;z-index:0;display:block}
+    /* Véu que separa o texto da malha 3D — sem ele o hero fica ilegível */
+    .hero::after{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(11,16,32,.74) 0%,rgba(11,16,32,.46) 46%,rgba(11,16,32,0) 78%)}
+    .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;width:100%}
+    .chip{display:inline-flex;gap:8px;align-items:center;padding:6px 12px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.05);font-size:12px;color:#cfe6ff}
+    .title{font-size:clamp(30px,6.4vw,52px);line-height:1.07;margin:14px 0;overflow-wrap:break-word}
     .title span{background:linear-gradient(90deg,var(--pri),var(--sec));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .tagline{font-size:18px;color:#c7cfdb;max-width:640px}
+    .tagline{font-size:clamp(15px,2.2vw,18px);color:var(--txt-2);max-width:640px}
     .cta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
-    .card3d{border:1px solid rgba(255,255,255,.08);background:var(--glass);backdrop-filter:blur(10px);border-radius:16px;padding:16px;display:grid;gap:10px;transform:translateZ(0)}
+    /* Se o WebGL ou o three.js não carregarem, o hero conserva um fundo decorativo em CSS */
+    .hero.no-3d canvas#scene{display:none}
+    .hero.no-3d::before{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+      background:radial-gradient(620px 420px at 72% 28%, rgba(101,247,218,.11), transparent 70%),
+                 radial-gradient(520px 380px at 22% 72%, rgba(120,166,255,.13), transparent 70%)}
+    .card3d{border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(10px);border-radius:16px;padding:16px;display:grid;gap:10px}
 
-    section{position:relative;padding:64px 0;border-top:1px solid rgba(255,255,255,.06)}
-    h2{margin:0 0 18px;font-size:28px}
+    /* --- Seções --- */
+    section{position:relative;padding:64px 0;border-top:1px solid rgba(255,255,255,.06);scroll-margin-top:calc(var(--header-h) + 20px)}
+    .hero{border-top:0}
+    h2{margin:0 0 18px;font-size:clamp(22px,4vw,28px)}
     .grid{display:grid;gap:16px}
     .grid.cols-3{grid-template-columns:repeat(3,1fr)}
     .grid.cols-2{grid-template-columns:repeat(2,1fr)}
-    @media (max-width:980px){.hero-inner{grid-template-columns:1fr}.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
 
-    .kard{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px}
+    .kard{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:16px;padding:18px;transition:transform .25s ease,border-color .25s ease}
     .kard h3{margin:0 0 8px;font-size:16px}
-    .muted{color:#9fb0c6;font-size:14px}
+    .kard h4{margin:8px 0}
+    .muted{color:var(--txt-3);font-size:14px}
+    #services .kard:hover,#projetos .kard:hover,#experiencias .kard:hover{transform:translateY(-3px);border-color:rgba(101,247,218,.28)}
 
     .timeline{display:grid;gap:8px}
     .tl{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
-    .tl .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(180deg,var(--sec),#5f86ff);box-shadow:0 0 0 3px rgba(120,166,255,.2)}
+    .tl .dot{margin-top:5px;width:12px;height:12px;border-radius:50%;background:linear-gradient(180deg,var(--sec),#5f86ff);box-shadow:0 0 0 3px rgba(120,166,255,.2)}
 
-    footer{padding:36px 0;text-align:center;color:#aab6c8}
     .badge{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(255,255,255,.1);padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.03)}
-    .btn.link{background:transparent;border-color:rgba(255,255,255,.2)}
-    .sr-only{position:absolute;left:-9999px}
+    footer{padding:36px 0;text-align:center;color:#aab6c8;border-top:1px solid rgba(255,255,255,.06)}
+
+    /* --- Responsivo (antes havia um único corte em 980px) --- */
+    @media (max-width:1100px){
+      .grid.cols-3{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:900px){
+      .nav-toggle{display:grid}
+      .nav-links{
+        position:absolute;top:100%;left:0;right:0;
+        flex-direction:column;align-items:stretch;gap:0;
+        background:rgba(11,16,32,.98);backdrop-filter:blur(14px);
+        border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+        padding:6px 20px 12px;display:none;
+      }
+      .nav-links.open{display:flex}
+      .nav-links a{padding:13px 4px;font-size:15px;border-bottom:1px solid rgba(255,255,255,.06)}
+      .nav-links a:last-child{border-bottom:0}
+      .brand .sub{display:none}
+      /* O CTA repetia-se: o menu já tem "Contato". Liberta espaço na barra. */
+      #ctaHeader{display:none}
+    }
+    @media (max-width:560px){
+      /* Só o nome: o sufixo da marca não cabe ao lado dos botões de idioma */
+      .brand-tail{display:none}
+      .brand .name{font-size:14px}
+      .lang button{padding:6px 9px}
+      .actions{gap:8px}
+    }
+    @media (max-width:380px){
+      .lang button{padding:6px 8px}
+      .brand .name{font-size:13px}
+    }
+    @media (max-width:720px){
+      /* Em retrato o texto ocupa toda a largura: o véu passa a ser vertical */
+      .hero::after{background:linear-gradient(180deg,rgba(11,16,32,.62) 0%,rgba(11,16,32,.42) 55%,rgba(11,16,32,.66) 100%)}
+      .hero-inner{grid-template-columns:1fr;gap:28px}
+      .grid.cols-3,.grid.cols-2{grid-template-columns:1fr}
+      section{padding:48px 0}
+      .hero{min-height:auto;padding-bottom:56px}
+    }
+    @media (max-width:480px){
+      .container{padding:0 16px}
+      .brand .name{font-size:14px}
+      .actions .btn.primary{padding:8px 10px;font-size:12px}
+      .cta .btn{width:100%;text-align:center}
+    }
+
+    /* --- Respeita quem pediu menos movimento --- */
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+      .btn:hover,.kard:hover{transform:none}
+    }
+
+    /* --- Impressão: o currículo em papel --- */
+    @media print{
+      header,.skip-link,canvas#scene,.lang,.nav-toggle,.nav-links,.cta,.actions{display:none!important}
+      body{background:#fff!important;color:#000;overflow:visible}
+      a{color:#000;text-decoration:underline}
+      section{padding:14px 0;border-top:1px solid #ccc;break-inside:avoid}
+      .hero{min-height:auto;padding:0 0 14px}
+      .kard,.card3d,.badge{border:1px solid #bbb;background:#fff!important;backdrop-filter:none;break-inside:avoid}
+      .muted,.tagline,.brand .sub{color:#333}
+      .title{font-size:26px}
+      .title span{-webkit-text-fill-color:#000;color:#000}
+      .grid.cols-3,.grid.cols-2{grid-template-columns:repeat(2,1fr)}
+      footer{border-top:1px solid #ccc;color:#333}
+    }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main" id="skipLink">Ir para o conteúdo</a>
+
   <header>
     <div class="container">
-      <nav>
+      <nav aria-label="Navegação principal">
         <div class="brand">
           <div class="logo" aria-hidden="true"></div>
           <div>
-            <h1 id="brandTitle">Jeysson L. Z. Armas • Data & BI</h1>
-            <div class="sub" id="brandSub">Analista e Cientista de Dados • BI • IA • Automação</div>
+            <!-- Propositadamente um parágrafo: o título de nível 1 da página é o do hero -->
+            <p class="name" id="brandTitle">Jeysson Zerpa<span class="brand-tail"> • Data &amp; BI</span></p>
+            <p class="sub" id="brandSub">Analista e Cientista de Dados • BI • IA • Automação</p>
           </div>
         </div>
-        <div class="nav-links">
+
+        <div class="nav-links" id="navLinks">
           <a id="navServ" href="#servicos">Serviços</a>
           <a id="navForm" href="#formacao">Formação</a>
           <a id="navExp" href="#experiencia">Experiência</a>
@@ -84,18 +292,24 @@
           <a id="navBadges" href="#badges">Insígnias</a>
           <a id="navCont" href="#contato">Contato</a>
         </div>
+
         <div class="actions">
-          <div class="lang" aria-label="Language">
-            <button data-lang="pt" class="active" aria-pressed="true">PT</button>
-            <button data-lang="es">ES</button>
-            <button data-lang="en">EN</button>
+          <div class="lang" role="group" id="langGroup" aria-label="Idioma / Language">
+            <button type="button" data-lang="pt" aria-pressed="true" lang="pt">PT</button>
+            <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
+            <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
           </div>
           <a class="btn primary" href="#contato" id="ctaHeader">Fazer Contato</a>
+          <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">
+            <span aria-hidden="true"></span>
+            <span class="sr-only" id="navToggleLabel">Abrir menu</span>
+          </button>
         </div>
       </nav>
     </div>
   </header>
 
+  <main id="main" tabindex="-1">
   <section class="hero" aria-labelledby="heroTitle">
     <canvas id="scene" aria-hidden="true"></canvas>
     <div class="container hero-inner">
@@ -204,50 +418,190 @@
     </div>
   </section>
 
+  </main>
+
   <footer>
     <div class="container">© <span id="year"></span> Jeysson Zerpa — Data • BI • IA</div>
   </footer>
 
-  <!-- three.js for interactive 3D background (defer for performance) -->
-  <script src="https://unpkg.com/three@0.160.0/build/three.min.js" defer></script>
+  <!--
+    Fundo 3D do hero.
+    three.js r160 é a última versão que publica o build global "three.min.js";
+    a migração para ES Modules está pendente e é uma decisão de arquitetura
+    (o build ESM atual pesa ~407 KB gzip contra ~163 KB deste). Ver README.
+  -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
   <script>
-  // ---------- 3D Scene (subtle, professional) ----------
-  window.addEventListener('load',()=>{
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const canvas = document.getElementById('scene');
-    const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(55, innerWidth/innerHeight, 0.1, 100);
-    camera.position.set(0,0,6);
-    const resize = ()=>{ renderer.setSize(innerWidth, innerHeight); renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix(); };
-    resize(); addEventListener('resize', resize);
+  // ---------- Cena 3D do hero: discreta, tolerante a falhas e econômica ----------
+  (function(){
+    'use strict';
+    var hero, canvas;
 
-    // Particles
-    const geo = new THREE.BufferGeometry();
-    const count = prefersReduced? 300 : 900;
-    const positions = new Float32Array(count*3);
-    for (let i=0;i<count;i++){ const r= Math.random()*3.8+1.6; const a=Math.random()*Math.PI*2; const b=Math.acos(Math.random()*2-1); positions[i*3]=r*Math.sin(b)*Math.cos(a); positions[i*3+1]=r*Math.sin(b)*Math.sin(a); positions[i*3+2]=r*Math.cos(b);} 
-    geo.setAttribute('position', new THREE.BufferAttribute(positions,3));
-    const mat = new THREE.PointsMaterial({size:0.018, color:0x65f7da, transparent:true, opacity:.55, depthWrite:false, blending:THREE.AdditiveBlending});
-    const points = new THREE.Points(geo, mat); scene.add(points);
-
-    // Wireframe sphere
-    const sphere = new THREE.Mesh(
-      new THREE.SphereGeometry(2.5, 32, 32),
-      new THREE.MeshBasicMaterial({wireframe:true, color:0x9bb6ff, transparent:true, opacity:.6})
-    ); scene.add(sphere);
-
-    let mx=0,my=0; addEventListener('mousemove',e=>{mx=(e.clientX/innerWidth-.5)*0.6; my=(e.clientY/innerHeight-.5)*0.6});
-    function animate(){
-      requestAnimationFrame(animate);
-      if(!prefersReduced){
-        sphere.rotation.y+=0.002; points.rotation.y+=0.0015; sphere.rotation.x = my; points.rotation.x= my*1.2; camera.position.x += (mx*2 - camera.position.x)*0.03; camera.position.y += (-my*2 - camera.position.y)*0.03;
-      }
-      camera.lookAt(0,0,0);
-      renderer.render(scene,camera);
+    // Se algo falhar, o hero não fica com um canvas vazio: cai num fundo em CSS.
+    function fallback(reason){
+      if (hero) hero.classList.add('no-3d');
+      if (window.console && console.info) console.info('[hero] fundo 3D desativado —', reason);
     }
-    animate();
-  });
+
+    var booted = false;
+
+    function boot(isLastChance){
+      if (booted) return;
+      hero = document.querySelector('.hero');
+      canvas = document.getElementById('scene');
+      if (!hero || !canvas) return;
+
+      // O three.min.js é diferido: se ainda não executou, espera pelo window.load
+      // antes de desistir. O CDN pode falhar ou estar bloqueado.
+      if (typeof THREE === 'undefined') {
+        if (isLastChance) { booted = true; fallback('three.js não carregou'); }
+        return;
+      }
+      booted = true;
+
+      var renderer;
+      try {
+        renderer = new THREE.WebGLRenderer({
+          canvas: canvas, antialias: true, alpha: true, powerPreference: 'low-power'
+        });
+      } catch (err) {
+        return fallback('WebGL indisponível (' + (err && err.message) + ')');
+      }
+
+      var reduceQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+      var scene = new THREE.Scene();
+      var camera = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
+      camera.position.set(0, 0, 6);
+
+      // Menos partículas em telas pequenas e para quem pediu menos movimento.
+      var count = reduceQuery.matches ? 260 : (window.innerWidth < 720 ? 420 : 900);
+      var positions = new Float32Array(count * 3);
+      for (var i = 0; i < count; i++) {
+        var r = Math.random() * 3.8 + 1.6;
+        var a = Math.random() * Math.PI * 2;
+        var b = Math.acos(Math.random() * 2 - 1);
+        positions[i * 3]     = r * Math.sin(b) * Math.cos(a);
+        positions[i * 3 + 1] = r * Math.sin(b) * Math.sin(a);
+        positions[i * 3 + 2] = r * Math.cos(b);
+      }
+      var geo = new THREE.BufferGeometry();
+      geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      var points = new THREE.Points(geo, new THREE.PointsMaterial({
+        size: 0.018, color: 0x65f7da, transparent: true, opacity: 0.55,
+        depthWrite: false, blending: THREE.AdditiveBlending
+      }));
+      scene.add(points);
+
+      var sphereGeo = new THREE.SphereGeometry(2.5, 32, 32);
+      var sphereMat = new THREE.MeshBasicMaterial({ wireframe: true, color: 0x9bb6ff, transparent: true, opacity: 0.45 });
+      var sphere = new THREE.Mesh(sphereGeo, sphereMat);
+      scene.add(sphere);
+
+      // --- Dimensão: o canvas segue o HERO, não a janela ---
+      // (antes desenhava 100vh de pixels dentro de um contêiner de 88vh)
+      function resize(){
+        var w = hero.clientWidth, h = hero.clientHeight;
+        if (!w || !h) return;
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        renderer.setSize(w, h, false); // false: o tamanho visual já vem do CSS
+        camera.aspect = w / h;
+        // Em ecrãs verticais o campo de visão horizontal estreita-se e a esfera
+        // engolia o texto. Afasta a câmara o suficiente para manter o enquadramento.
+        var vFov = camera.fov * Math.PI / 180;
+        var hFov = 2 * Math.atan(Math.tan(vFov / 2) * camera.aspect);
+        var fit  = 2.6 / Math.sin(Math.min(vFov, hFov) / 2);
+        camera.position.z = Math.max(6, Math.min(fit, 14));
+        camera.updateProjectionMatrix();
+        draw();
+      }
+      var resizeTimer;
+      function onResize(){ clearTimeout(resizeTimer); resizeTimer = setTimeout(resize, 150); }
+
+      // ResizeObserver só dispara quando o hero muda de verdade — evita o
+      // redimensionamento em cascata quando a barra do navegador móvel se recolhe.
+      if (window.ResizeObserver) { new ResizeObserver(onResize).observe(hero); }
+      else { window.addEventListener('resize', onResize); }
+
+      // --- Ponteiro: pointermove cobre rato, toque e caneta ---
+      var targetX = 0, targetY = 0, curX = 0, curY = 0;
+      hero.addEventListener('pointermove', function(e){
+        var r = hero.getBoundingClientRect();
+        if (!r.width || !r.height) return;
+        targetX = ((e.clientX - r.left) / r.width  - 0.5) * 0.6;
+        targetY = ((e.clientY - r.top)  / r.height - 0.5) * 0.6;
+      }, { passive: true });
+      hero.addEventListener('pointerleave', function(){ targetX = 0; targetY = 0; }, { passive: true });
+
+      // --- Laço com pausa: aba oculta ou hero fora do ecrã não gastam bateria ---
+      var clock = new THREE.Clock();
+      var raf = 0, running = false, pageVisible = !document.hidden, onScreen = true;
+
+      function draw(){ renderer.render(scene, camera); }
+
+      function frame(){
+        var t = clock.getElapsedTime();
+        // Deriva suave: dá vida à cena mesmo sem cursor (essencial no telemóvel).
+        var driftX = Math.sin(t * 0.12) * 0.10;
+        var driftY = Math.cos(t * 0.09) * 0.07;
+        curX += ((targetX + driftX) - curX) * 0.045;
+        curY += ((targetY + driftY) - curY) * 0.045;
+
+        sphere.rotation.y += 0.002;
+        points.rotation.y += 0.0015;
+        sphere.rotation.x = curY;
+        points.rotation.x = curY * 1.2;
+        camera.position.x += (curX * 2 - camera.position.x) * 0.03;
+        camera.position.y += (-curY * 2 - camera.position.y) * 0.03;
+        camera.lookAt(0, 0, 0);
+
+        draw();
+        raf = requestAnimationFrame(frame);
+      }
+
+      function play(){
+        if (running || !pageVisible || !onScreen || reduceQuery.matches) return;
+        running = true;
+        raf = requestAnimationFrame(frame);
+      }
+      function pause(){
+        running = false;
+        if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      }
+
+      document.addEventListener('visibilitychange', function(){
+        pageVisible = !document.hidden;
+        pageVisible ? play() : pause();
+      });
+
+      if (window.IntersectionObserver) {
+        new IntersectionObserver(function(entries){
+          onScreen = entries[0].isIntersecting;
+          onScreen ? play() : pause();
+        }, { threshold: 0 }).observe(hero);
+      }
+
+      // Se a preferência de movimento mudar em tempo real, obedece na hora.
+      function onReduceChange(){
+        if (reduceQuery.matches) { pause(); camera.lookAt(0, 0, 0); draw(); }
+        else { play(); }
+      }
+      if (reduceQuery.addEventListener) reduceQuery.addEventListener('change', onReduceChange);
+      else if (reduceQuery.addListener) reduceQuery.addListener(onReduceChange);
+
+      resize();
+      if (reduceQuery.matches) { camera.lookAt(0, 0, 0); draw(); } // um quadro estático, sem laço
+      else { play(); }
+    }
+
+    // Os scripts diferidos correm antes do DOMContentLoaded, por isso essa é a
+    // tentativa normal; o window.load é a rede de segurança que decide a falha.
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function(){ boot(false); });
+    } else {
+      boot(false);
+    }
+    window.addEventListener('load', function(){ boot(true); });
+  })();
   </script>
 
   <script>
@@ -277,12 +631,12 @@
       ],
       humanitarias:[
         {d:'2024',t:'Coordenação e Gestão de Abrigos — OIM/IOM, Boa Vista'},
+        {d:'08/07/2024',t:'IOM Global Induction Programme — OIM/IOM'},
+        {d:'04/07/2024',t:'PSEA — OIM/IOM'},
+        {d:'05/04/2024',t:'VIH no local de trabalho — UN Cares'},
+        {d:'04/04/2024',t:'I Know Gender 16 — UN Women'},
         {d:'05/03/2024',t:'PRASI (Atualização) — UNDSS/ONU'},
         {d:'19/02/2024',t:'Conflict Resolution Master Class — UNSSC'},
-        {d:'04/07/2024',t:'PSEA — OIM/IOM'},
-        {d:'04/04/2024',t:'I Know Gender 16 — UN Women'},
-        {d:'05/04/2024',t:'VIH no local de trabalho — UN Cares'},
-        {d:'08/07/2024',t:'IOM Global Induction Programme — OIM/IOM'},
         {d:'25/03/2023',t:'Proteção de Dados / Ética & Conduta / InfoSec — OIM/IOM'},
         {d:'2022',t:'PSEA • BSAFE • PRASI (UNDSS/ONU)'}
       ],
@@ -355,7 +709,7 @@
         {t:'Proyectos Humanitarios',d:'Soluciones analíticas con impacto social (ONU/OIM).'}
       ],
       academica:[
-        {d:'31/08/2025',t:'MBA en Business Intelligence en BI — Unopar Anhanguera, Londrina'},
+        {d:'31/08/2025',t:'MBA en Business Intelligence (BI) — Unopar Anhanguera, Londrina'},
         {d:'01/07/2025 • En curso',t:'Grado Tecnológico en Ciencia de Datos — Unopar, Prudentópolis'},
         {d:'07/03/2025 • En curso',t:'Formación en Análisis de Datos — Alex Lage / Unopar, Londrina'},
         {d:'20/12/2024',t:'Educación Media (ENCCEJA) — Escola Monteiro Lobato, Roraima'},
@@ -363,12 +717,12 @@
       ],
       humanitarias:[
         {d:'2024',t:'Coordinación y Gestión de Refugios — OIM/IOM, Boa Vista'},
+        {d:'08/07/2024',t:'IOM Global Induction Programme — OIM/IOM'},
+        {d:'04/07/2024',t:'PSEA — OIM/IOM'},
+        {d:'05/04/2024',t:'VIH en el lugar de trabajo — UN Cares'},
+        {d:'04/04/2024',t:'I Know Gender 16 — UN Women'},
         {d:'05/03/2024',t:'PRASI (Actualización) — UNDSS/ONU'},
         {d:'19/02/2024',t:'Conflict Resolution Master Class — UNSSC'},
-        {d:'04/07/2024',t:'PSEA — OIM/IOM'},
-        {d:'04/04/2024',t:'Igualdad de Género y Migración — UN Women'},
-        {d:'05/04/2024',t:'VIH en el lugar de trabajo — UN Cares'},
-        {d:'08/07/2024',t:'IOM Global Induction Programme — OIM/IOM'},
         {d:'25/03/2023',t:'Protección de Datos / Ética & Conducta / InfoSec — OIM/IOM'},
         {d:'2022',t:'PSEA • BSAFE • PRASI (UNDSS/ONU)'}
       ],
@@ -441,7 +795,7 @@
         {t:'Humanitarian Projects',d:'Analytical solutions with social impact (UN/IOM).'}
       ],
       academica:[
-        {d:'08/31/2025',t:'MBA in Business Intelligence in BI — Unopar Anhanguera, Londrina'},
+        {d:'08/31/2025',t:'MBA in Business Intelligence (BI) — Unopar Anhanguera, Londrina'},
         {d:'07/01/2025 • Ongoing',t:'Technologist in Data Science — Unopar, Prudentópolis'},
         {d:'03/07/2025 • Ongoing',t:'Data Analysis Program — Alex Lage / Unopar, Londrina'},
         {d:'12/20/2024',t:'High School (ENCCEJA) — Escola Monteiro Lobato, Roraima'},
@@ -449,12 +803,12 @@
       ],
       humanitarias:[
         {d:'2024',t:'Shelter Coordination & Management — IOM, Boa Vista'},
+        {d:'07/08/2024',t:'IOM Global Induction Programme — IOM'},
+        {d:'07/04/2024',t:'PSEA — IOM'},
+        {d:'04/05/2024',t:'HIV in the Workplace — UN Cares'},
+        {d:'04/04/2024',t:'I Know Gender 16 — UN Women'},
         {d:'03/05/2024',t:'PRASI (Update) — UNDSS/UN'},
         {d:'02/19/2024',t:'Conflict Resolution Master Class — UNSSC'},
-        {d:'07/04/2024',t:'PSEA — IOM'},
-        {d:'04/04/2024',t:'I Know Gender 16 — UN Women'},
-        {d:'04/05/2024',t:'HIV in the Workplace — UN Cares'},
-        {d:'07/08/2024',t:'IOM Global Induction Programme — IOM'},
         {d:'03/25/2023',t:'Data Protection / Ethics & Conduct / InfoSec — IOM'},
         {d:'2022',t:'PSEA • BSAFE • PRASI (UNDSS/UN)'}
       ],
@@ -543,19 +897,108 @@
     // contact CTA labels
     S('#c_h2').textContent = d.nav.cont; S('#c_h3').textContent = lang==='en'?'Let\'s talk':(lang==='es'?'Hablemos':'Vamos conversar');
     S('#c_p').textContent = lang==='en'?'Send a message and receive a tailored BI/AI demo for your context.':(lang==='es'?'Envíame un mensaje y recibe una demo personalizada de BI/IA para tu contexto.':'Envie uma mensagem e receba uma demonstração personalizada de BI/IA para o seu contexto.');
-    S('#cta_whats').textContent = lang==='en'?'Chat on WhatsApp (+55 (42) 98402-5960)':(lang==='es'?'Hablar por WhatsApp (+55 (35) 9 9888-9882)':'Falar no WhatsApp (+55 (35) 9 9888-9882)');
+    S('#cta_whats').textContent = lang==='en'?'Chat on WhatsApp (+55 (35) 9 9888-9882)':(lang==='es'?'Hablar por WhatsApp (+55 (35) 9 9888-9882)':'Falar no WhatsApp (+55 (35) 9 9888-9882)');
     S('#cta_email').textContent = lang==='en'?'Send email':(lang==='es'?'Enviar correo':'Enviar e-mail');
     S('#cta_linkedin').textContent = 'LinkedIn';
+    // O atributo lang do documento tem de acompanhar o idioma visível:
+    // sem isto, um leitor de ecrã pronuncia o inglês com fonética portuguesa.
+    document.documentElement.lang = lang==='en' ? 'en' : (lang==='es' ? 'es' : 'pt-BR');
+    S('#skipLink').textContent = lang==='en'?'Skip to content':(lang==='es'?'Ir al contenido':'Ir para o conteúdo');
+    S('#langGroup').setAttribute('aria-label', lang==='en'?'Language':(lang==='es'?'Idioma':'Idioma'));
+    syncNavToggleLabel(lang);
   }
-  render('pt');
+  // ---------- Idioma: lembrado entre visitas e detectado do navegador ----------
+  const LANGS = ['pt','es','en'];
+  const LANG_KEY = 'jz-lang';
+  const langButtons = Array.from(document.querySelectorAll('.lang button'));
 
-  document.querySelectorAll('.lang button').forEach(b=>{
-    b.addEventListener('click',()=>{
-      document.querySelectorAll('.lang button').forEach(x=>x.classList.remove('active'));
-      b.classList.add('active'); b.setAttribute('aria-pressed','true');
-      render(b.dataset.lang);
-    })
-  })
+  function currentLang(){
+    const pressed = langButtons.find(b=>b.getAttribute('aria-pressed')==='true');
+    return pressed ? pressed.dataset.lang : 'pt';
+  }
+
+  function setLang(lang, remember){
+    if (LANGS.indexOf(lang) === -1) lang = 'pt';
+    // aria-pressed tem de ser reposto em TODOS os botões, não só marcado no novo,
+    // senão um leitor de ecrã anuncia vários idiomas como "activo".
+    langButtons.forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.lang===lang)));
+    render(lang);
+    if (remember) { try { localStorage.setItem(LANG_KEY, lang); } catch(e){ /* modo privado */ } }
+  }
+
+  function preferredLang(){
+    let saved = null;
+    try { saved = localStorage.getItem(LANG_KEY); } catch(e){ /* modo privado */ }
+    if (saved && LANGS.indexOf(saved) !== -1) return saved;
+    const nav = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+    const code = nav.toLowerCase().slice(0,2);
+    return LANGS.indexOf(code) !== -1 ? code : 'pt';
+  }
+
+  langButtons.forEach(b=>{
+    b.addEventListener('click', ()=>setLang(b.dataset.lang, true));
+  });
+
+  // ---------- Menu móvel ----------
+  // Causa raiz do hero tapado no telemóvel: o header crescia para 3 filas.
+  // Agora os links recolhem-se num painel e o header mantém uma única fila.
+  const navToggle = S('#navToggle');
+  const navLinks  = S('#navLinks');
+  const navToggleLabel = S('#navToggleLabel');
+
+  function syncNavToggleLabel(lang){
+    if (!navToggle || !navToggleLabel) return;
+    const open = navToggle.getAttribute('aria-expanded') === 'true';
+    const T = {
+      pt:['Abrir menu','Fechar menu'],
+      es:['Abrir menú','Cerrar menú'],
+      en:['Open menu','Close menu']
+    }[lang] || ['Abrir menu','Fechar menu'];
+    navToggleLabel.textContent = open ? T[1] : T[0];
+  }
+
+  function setMenu(open){
+    if (!navToggle || !navLinks) return;
+    navToggle.setAttribute('aria-expanded', String(open));
+    navLinks.classList.toggle('open', open);
+    syncNavToggleLabel(currentLang());
+  }
+
+  if (navToggle && navLinks){
+    navToggle.addEventListener('click', ()=>{
+      setMenu(navToggle.getAttribute('aria-expanded') !== 'true');
+    });
+    // Ao seguir um link, o painel fecha-se — senão tapa a secção de destino.
+    navLinks.addEventListener('click', e=>{ if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('keydown', e=>{
+      if (e.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true'){
+        setMenu(false); navToggle.focus();
+      }
+    });
+    document.addEventListener('click', e=>{
+      if (navToggle.getAttribute('aria-expanded') !== 'true') return;
+      if (!e.target.closest('#navLinks') && !e.target.closest('#navToggle')) setMenu(false);
+    });
+    // Ao voltar ao desktop, o painel deixa de existir: limpa o estado.
+    const wide = window.matchMedia('(min-width:901px)');
+    const onWide = ()=>{ if (wide.matches) setMenu(false); };
+    wide.addEventListener ? wide.addEventListener('change', onWide) : wide.addListener(onWide);
+  }
+
+  // ---------- Altura real do header ----------
+  // O padding do hero e o deslocamento das âncoras eram valores fixos (92px / nada).
+  // Medindo o header, as duas coisas acertam em qualquer ecrã e em qualquer idioma.
+  const headerEl = document.querySelector('header');
+  function syncHeaderHeight(){
+    if (!headerEl) return;
+    document.documentElement.style.setProperty('--header-h', headerEl.offsetHeight + 'px');
+  }
+  if (headerEl && window.ResizeObserver) new ResizeObserver(syncHeaderHeight).observe(headerEl);
+  else window.addEventListener('resize', syncHeaderHeight);
+  window.addEventListener('load', syncHeaderHeight);
+
+  setLang(preferredLang(), false);
+  syncHeaderHeight();
   </script>
 </body>
 </html>
